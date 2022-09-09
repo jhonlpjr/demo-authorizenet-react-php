@@ -1,0 +1,6 @@
+[submodule "backend"]
+	path = backend
+	url = git@github.com:jhonlpjr/backend-authorizenet-php.git
+[submodule "frontend"]
+	path = frontend
+	url = git@github.com:jhonlpjr/credit-card-sample.git

@@ -1,0 +1,28 @@
+version: "3.9" # version del docker-compose(?)
+
+services: 
+  frontend:
+    image: node:16.14-alpine
+    container_name: frontend
+    working_dir: /var/www
+    volumes:
+      - ./frontend/:/var/www
+    tty: true
+    ports:
+      - "3000:3000"
+    command: sh -c "npm install && npm start"
+    networks:
+      - dev
+
+  backend:
+    image: php:7.4-apache
+    container_name: backend
+    ports:
+      - "8080:80"
+    volumes:
+      - ./backend:/var/www/html
+    networks:
+      - dev
+
+networks:
+  dev:
